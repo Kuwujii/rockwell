@@ -1,0 +1,22 @@
+W pliku data, znajdują się następujące kolumny:
+
+Code, Value, Date. 
+Należy zaagregować dane do miesięcznej granulacji oraz dla każdej unikalnej wartości z kolumny Code.
+Oznacza to że dla kazdej wartosci Code dostajemy serie danych z zakresu dat dostepnych w pliku dla kazdego miesiaca. 
+W kolumnie Value powinny znalezc sie zsumowane wartości dla zadanego miesiąca(Date) i kodu(Code)
+
+W ten sposób powstaną szeregi czasowe które należy przeanalizować w następujący sposób:
+-Stworzyć klasę o nazwie Signal, która będzie do inizalizacji przyjmować ścieżke do danych i wczytywać je do formatu DataFrame wewnątrz metody __init__.
+-Klasa powinna mieć metodę process_data która będzie agregować dane zgodnie z opisem z zadania. 
+-Klasa signal powinna mieć metodę predict która będzie przyjmować dane(output z metody process_data) oraz horyzont czasowy(okres dla którego ma zostać przeprowadzona predykcja) 
+a zwracać będzie predykcję na zadany okres (sugerujemy użyć średnej kroczącej).
+-Klasa signal powinna mieć atrybuty: mean (średnia policzona dla całego dostępnego okresu) oraz  std (odchylenie standardowe policzone dla całego okresu)
+-Klasa powinna mieć metodę plot która rysuje wykres szeregu czasowego i odróżnia kolorem predykcję oraz rzeczywiste dane.
+-Klasa powinna mieć metodę calculate_mse która oblicza błąd średniokwadratowy dla predykcji. 
+-Do kodu powinien być załączony jupyter notebook gdzie problem zostanie opisany, metody zostaną wywołane oraz przedstawione zostaną wnioski z analizy. 
+
+P.S Kod należy napisać zgodnie z dobrymi praktykami (PEP8). 
+
+Szkic klasy znajduję sie w pliku "example.py"
+
+Powodzenia!
